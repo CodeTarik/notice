@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+.head{
+    background-color: #2d3748;
+    border-bottom: 4px solid silver;
+    height: auto;
+}
+
+.head img{
+    height: 48px;
+    padding: 18px;
+}
+
+.head h1{
+    color: white;
+    font-weight: bold;
+}
