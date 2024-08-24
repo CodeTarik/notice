@@ -36,6 +36,42 @@ function addMyNotice() {
 }
 // Notice Push - End
 
+//Sichern - Beginn
+function save(){
+    let postText = JSON.stringify(posts);
+    localStorage.setItem('posts', postText);
+
+    let titleText = JSON.stringify(titles); 
+    localStorage.setItem('titles', titleText);
+}
+//Sichern - Ende
+
+
+function render(){
+
+    let myposts = document.getElementById('myposts');
+      myposts.innerHTML = '';
+  
+      for(let i=0; i < posts.length; i++){ 
+      myposts.innerHTML += /*html*/`
+      <div class="post">
+        <b class="headline">${titles[i]}</b> <br>    
+        <b>${posts[i]}</b> <br>
+        </div>`;
+      }
+  
+      document.getElementById('notice').value = '';
+      document.getElementById('title').value = '';
+  
+    }
+
+
+
+
+
+
+
+
 
 
 //HTML einbeziehen
