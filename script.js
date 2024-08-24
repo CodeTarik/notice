@@ -6,11 +6,35 @@ let titles = [];
 const postText = [];
 const titleText = [];
 
+document.getElementById('notice').addEventListener('click', function() {
+    if(!document.getElementById('title-textarea')){
+        let titleTextarea = document.getElementById('textarea');
+        titleTextarea.placeholder = 'Titel einfügen';
+        titleTextarea.id = 'title-textarea';
+        titleTextarea.name = 'title';
+        titleTextarea.cols = '30';
+        titleTextarea.required = true; 
+        
+        this.parentNode.appendChild(titleTextarea);
+    }
+})
 
+// Push Notice - Begin
 function addMyNotice() {
     let text = document.getElementById('notice').value;
     let title = document.getElementById('title').value;
+
+    if(text.trim() !== '' && title.trim() !== ''){
+        posts.push(text);
+        titles.push(title);
+
+        document.getElementById('notice').value = '';
+        document.getElementById('title').value = '';
+
+        
+    }
 }
+// Notice Push - End
 
 
 
