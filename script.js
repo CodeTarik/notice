@@ -1,5 +1,16 @@
+//Arrays
+let posts =[];
+let titles = [];
 
 
+
+
+
+
+
+
+
+//HTML einbeziehen
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let element of includeElements) {
