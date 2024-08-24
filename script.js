@@ -3,10 +3,14 @@ let posts =[];
 let titles = [];
 
 
+const postText = [];
+const titleText = [];
 
 
-
-
+function addMyNotice() {
+    let text = document.getElementById('notice').value;
+    let title = document.getElementById('title').value;
+}
 
 
 
