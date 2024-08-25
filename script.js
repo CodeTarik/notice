@@ -28,13 +28,22 @@ function render(){
         myposts.innerHTML += /*html*/`
         <div class="post">
             <b>${posts[i]}</b>
+            <div>
+            <button onclick="deleteNotice(${i})">Delete</button>
+            </div>
         </div>`;
     }
 
     document.getElementById('notice').value = '';
 }
 
+function deleteNotice(i){
+    posts.splice(i, 1);
 
+    addMyPost();
+    save();
+    render();
+}
 
 
 
