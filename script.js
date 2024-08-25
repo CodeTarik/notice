@@ -46,8 +46,8 @@ function deleteNotice(i){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const textarea = document.getElementById('notice');
-    const placeholderText = "Notiz schreiben";
+    let textarea = document.getElementById('notice');
+    let placeholderText = "Notiz schreiben";
     let currentText = "";
     let index = 0;
     let dots = "";
