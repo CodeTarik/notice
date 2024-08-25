@@ -32,7 +32,7 @@ function render(){
             <b>${titles[i]}</b><br>
             <b>${posts[i]}</b>
             <div>
-            <button onclick="deleteNotice(${i})">Delete</button>
+            <button class="d-button" onclick="deleteNotice(${i})">Löschen</button>
             </div>
         </div>`;
     }

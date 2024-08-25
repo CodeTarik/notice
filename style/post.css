@@ -19,3 +19,12 @@
     cursor: crosshair;
 }
 
+
+#title{
+    font-weight: bold;
+}
+
+#notice{
+    font-weight: 600;
+}
+

@@ -25,3 +25,9 @@ button:hover {
 button:active {
     transform: translateY(-1px);
 }
+
+/*Delete Button*/
+.d-button{
+    padding: 4px;
+    font-size: 8px;
+}
