@@ -7,12 +7,12 @@
     margin-top: 48px;
     box-shadow: 5px 5px 5px black;
     gap: 24px;
-    word-wrap: break-word;
     background-color: white;
     font-family: 'Alexandria',sans-serif;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    line-break: anywhere;
 }
 
 .post button:hover{
