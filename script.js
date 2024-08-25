@@ -1,6 +1,8 @@
 let posts = [];
+let titles = [];
 
 let postsAsText = [];
+let titlesAsText = [];
 
 
 function addMyPost(){
@@ -27,6 +29,7 @@ function render(){
     for(let i=0; i < posts.length; i++){
         myposts.innerHTML += /*html*/`
         <div class="post">
+            <b>${titles[i]}</b><br>
             <b>${posts[i]}</b>
             <div>
             <button onclick="deleteNotice(${i})">Delete</button>
@@ -69,6 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setInterval(updatePlaceholder, 200);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const noticeTextarea = document.getElementById('notice');
+    const titleInput = document.getElementById('title');
+
+    noticeTextarea.addEventListener('focus', () => {
+        // Erweitern des Textarea-Feldes
+        noticeTextarea.classList.add('expanded');
+        // Anzeigen des Titel-Eingabefeldes
+        titleInput.style.display = 'block';
+    });
+
+    noticeTextarea.addEventListener('blur', () => {
+        // Wenn das Textarea-Feld keine Inhalte hat, zurücksetzen
+        if (!noticeTextarea.value.trim()) {
+            noticeTextarea.classList.remove('expanded');
+            titleInput.style.display = 'none';
+        }
+    });
 });
 
 

@@ -8,26 +8,36 @@
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="head.css">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="button.css">
     <link rel="stylesheet" href="foot.css">
-    <link style="font-weight: bolder;" rel="shortcut icon" sizes="180x180" href="assets/icon/pencil.png">
+    <link rel="shortcut icon" sizes="180x180" href="assets/icon/pencil.png">
 
     <script src="script.js" defer></script>
 
 </head>
-
 <body>
 
 <div w3-include-html="./templates/header.html"></div>
 
 <main>
     <div>
-    <textarea placeholder="Notiz schreiben..." class="input" name="text" id=""></textarea>
+    <input type="text" id="title" class="input title-input" placeholder="Titel hinzufügen..." style="display: none;">
+    <textarea placeholder="Notiz schreiben..." class="input" for="enter-title" name="text" id="notice" cols="30" autocomplete="off" required></textarea><!--Ohne eine Eintragung wird das Textfeld nicht freigegeben.-->
+    </div> 
+    
+    <button onclick="addMyPost()">
+        Insert note
+    </button>
+
+
+    <div id="myposts">
     </div>
+
 </main>
 
 
 <div w3-include-html="./templates/footer.html"></div>
-
 
 
 </body>

@@ -17,7 +17,8 @@ textarea{
     padding: 10px;
     border: 2px solid white;
     border-radius: 5px;
-    box-shadow: 3px 3px 2px #2d3748; 
+    box-shadow: 3px 3px 2px #2d3748;
+    transition: all 0.3s ease; 
 }
 
 .input:hover{
@@ -29,7 +30,21 @@ textarea{
     animation: dots 1.5s steps(5, end) infinite;
 }
 
+.title-input {
+    margin-bottom: 10px;
+}
 
+#notice {
+    height: 50px;
+    transition: height 0.3s ease;
+}
+
+#notice.expanded {
+    height: 150px;
+}
+
+
+/* Animation */
 @keyframes dots {
     0%, 20% {
         content: "Notiz schreiben";
