@@ -25,30 +25,22 @@ textarea{
     outline-color: #2d3748
 }
 
-button {
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: bold;
-    font-family: 'Alexandria', sans-serif;
-    color: #000;
-    background-color: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-    width: fit-content;
-    margin-top: 22px;
+.input::placeholder{
+    animation: dots 1.5s steps(5, end) infinite;
 }
-  
-button:hover {
-    background-color: #2d3748;
-    box-shadow: 0px 10px 15px #fa8820;
-    color: #fff;
-    transform: translateY(-7px);
-}
-  
-button:active {
-    transform: translateY(-1px);
+
+
+@keyframes dots {
+    0%, 20% {
+        content: "Notiz schreiben";
+    }
+    40% {
+        content: "Notiz schreiben.";
+    }
+    60% {
+        content: "Notiz schreiben..";
+    }
+    80%, 100% {
+        content: "Notiz schreiben...";
+    }
 }

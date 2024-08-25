@@ -46,6 +46,18 @@ function deleteNotice(i){
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const textarea = document.getElementById('notice');
+    const placeholderText = "Notiz schreiben";
+    let dots = "";
+    let index = 0;
+
+    setInterval(() => {
+        dots = dots.length < 3 ? dots + "." : "";
+        textarea.setAttribute("placeholder", placeholderText + dots);
+    }, 500);
+});
+
 
 //HTML einbeziehen
 async function includeHTML() {
