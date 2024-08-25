@@ -45,18 +45,32 @@ function deleteNotice(i){
     render();
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const textarea = document.getElementById('notice');
     const placeholderText = "Notiz schreiben";
-    let dots = "";
+    let currentText = "";
     let index = 0;
+    let dots = "";
 
-    setInterval(() => {
-        dots = dots.length < 3 ? dots + "." : "";
-        textarea.setAttribute("placeholder", placeholderText + dots);
-    }, 500);
+    function updatePlaceholder() {
+        if (index < placeholderText.length) {
+            currentText += placeholderText.charAt(index);
+            index++;
+        } else {
+            dots = dots.length < 3 ? dots + "." : "";
+            if (dots.length === 3) {
+                currentText = "";
+                index = 0;
+                dots = "";
+            }
+        }
+
+        textarea.setAttribute("placeholder", currentText + dots);
+    }
+
+    setInterval(updatePlaceholder, 200);
 });
+
 
 
 //HTML einbeziehen
