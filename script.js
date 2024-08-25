@@ -1,76 +1,36 @@
-//Arrays
-let posts =[];
-let titles = [];
+let posts = [];
+
+let postsAsText = [];
 
 
-const postText = [];
-const titleText = [];
-
-document.getElementById('notice').addEventListener('click', function() {
-    if(!document.getElementById('title-textarea')){
-        let titleTextarea = document.getElementById('textarea');
-        titleTextarea.placeholder = 'Titel einfügen';
-        titleTextarea.id = 'title-textarea';
-        titleTextarea.name = 'title';
-        titleTextarea.cols = '30';
-        titleTextarea.required = true; 
-        
-        this.parentNode.appendChild(titleTextarea);
-    }
-})
-
-// Push Notice - Begin
-function addMyNotice() {
+function addMyPost(){
     let text = document.getElementById('notice').value;
-    let title = document.getElementById('title').value;
 
-    if(text.trim() !== '' && title.trim() !== ''){
+    if(text.trim() !== ''){
         posts.push(text);
-        titles.push(title);
-
         document.getElementById('notice').value = '';
-        document.getElementById('title').value = '';
 
-        
     }
 }
-// Notice Push - End
 
-//Sichern - Beginn
 function save(){
-    let postText = JSON.stringify(posts);
-    localStorage.setItem('posts', postText);
-
-    let titleText = JSON.stringify(titles); 
-    localStorage.setItem('titles', titleText);
+    let postsAsText = JSON.stringify(posts);
+    localStorage.setItem('posts', postsAsText);
 }
-//Sichern - Ende
-
 
 function render(){
-
     let myposts = document.getElementById('myposts');
-      myposts.innerHTML = '';
-  
-      for(let i=0; i < posts.length; i++){ 
-      myposts.innerHTML += /*html*/`
-      <div class="post">
-        <b class="headline">${titles[i]}</b> <br>    
-        <b>${posts[i]}</b> <br>
+    myposts.innerHTML = '';
+
+    for(let i=0; i < posts.length; i++){
+        myposts.innerHTML += /*html*/`
+        <div class="post">
+            <b>${posts[i]}</b>
         </div>`;
-      }
-  
-      document.getElementById('notice').value = '';
-      document.getElementById('title').value = '';
-  
     }
 
-
-
-
-
-
-
+    document.getElementById('notice').value = '';
+}
 
 
 
