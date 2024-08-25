@@ -10,6 +10,8 @@ function addMyPost(){
         posts.push(text);
         document.getElementById('notice').value = '';
 
+        save();
+        render();
     }
 }
 
@@ -31,6 +33,8 @@ function render(){
 
     document.getElementById('notice').value = '';
 }
+
+
 
 
 
