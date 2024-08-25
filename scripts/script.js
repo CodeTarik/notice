@@ -48,6 +48,7 @@ function deleteNotice(i){
     render();
 }
 
+//Animation placeholder - Beginn
 document.addEventListener('DOMContentLoaded', () => {
     let textarea = document.getElementById('notice');
     let placeholderText = "Notiz schreiben";
@@ -73,47 +74,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(updatePlaceholder, 200);
 });
+//Animation placeholder - Ende
 
+
+//Titel & Notizen in einem Fenster - Beginn
 document.addEventListener('DOMContentLoaded', () => {
     const noticeTextarea = document.getElementById('notice');
-    const titleInput = document.getElementById('title');
+    const titleTextarea = document.getElementById('title');
 
     noticeTextarea.addEventListener('focus', () => {
-        // Erweitern des Textarea-Feldes
+        // Erweitern des Textarea-Feldes und Anzeige des Titel-Eingabefeldes
         noticeTextarea.classList.add('expanded');
-        // Anzeigen des Titel-Eingabefeldes
-        titleInput.style.display = 'block';
+        titleTextarea.style.display = 'block'; // Das Titel-Textarea wird innerhalb des erweiterten Bereichs angezeigt
     });
 
     noticeTextarea.addEventListener('blur', () => {
-        // Wenn das Textarea-Feld keine Inhalte hat, zurücksetzen
+        // Wenn keine Notiz eingegeben wurde, zurücksetzen
         if (!noticeTextarea.value.trim()) {
             noticeTextarea.classList.remove('expanded');
-            titleInput.style.display = 'none';
+            titleTextarea.style.display = 'none'; // Das Titel-Textarea wird ausgeblendet
         }
     });
 });
+// Titel & Notizen in einem Fenster - Ende
 
 
 
-//HTML einbeziehen
-async function includeHTML() {
-    let includeElements = document.querySelectorAll('[w3-include-html]');
-    for (let element of includeElements) {
-        const file = element.getAttribute("w3-include-html");
-        try {
-            let resp = await fetch(file);
-            if (resp.ok) {
-                element.innerHTML = await resp.text();
-            } else {
-                element.innerHTML = 'Seite nicht gefunden';
-            }
-        } catch (error) {
-            console.error('Fehler beim Einfügen von HTML:', error);
-            element.innerHTML = 'Inhalt konnte nicht geladen werden';
-        }
-    }
-}
 
-includeHTML();
+
+
 

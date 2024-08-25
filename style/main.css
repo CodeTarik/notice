@@ -34,6 +34,16 @@ textarea{
     margin-bottom: 10px;
 }
 
+.note-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 #notice {
     height: 50px;
     transition: height 0.3s ease;
@@ -43,6 +53,12 @@ textarea{
     height: 150px;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Animation */
 @keyframes dots {

@@ -9,8 +9,13 @@
     gap: 24px;
     word-wrap: break-word;
     background-color: white;
+    font-family: 'Alexandria',sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .post button:hover{
     cursor: crosshair;
 }
+
