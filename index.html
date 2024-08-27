@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notizen</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="/style/head.css">
-    <link rel="stylesheet" href="/style/main.css">
-    <link rel="stylesheet" href="/style/post.css">
-    <link rel="stylesheet" href="/style/button.css">
-    <link rel="stylesheet" href="/style/foot.css">
+    <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="foot.css">
     <link rel="shortcut icon" sizes="180x180" href="assets/icon/pencil.png">
 
-    <script src="/scripts/script.js" defer></script>
-    <script src="/scripts/include.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="include.js" defer></script>
 
 </head>
 <body>
@@ -24,11 +24,9 @@
 <main>
     <form>
     <div class="note-container">
-    <input type="text" id="title" class="input" placeholder="Titel hinzufügen..." style="display: none;" required>
+    <input type="text" id="title" class="input" placeholder="Titel hinzufügen..." required>
     <textarea placeholder="Notiz schreiben..." class="input" for="enter-title" name="text" id="notice" cols="30" autocomplete="off" required></textarea><!--Ohne eine Eintragung wird das Textfeld nicht freigegeben.--> 
     </div>
-
-    
 
     <button onclick="addMyPost()">
         Insert note
