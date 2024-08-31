@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding-bottom: 100px;
+    background-color: #bbb1a1;
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+
+
