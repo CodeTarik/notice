@@ -4,7 +4,7 @@ let titles = [];
 let postsAsText = [];
 let titlesAsText = [];
 
-
+// Push Notes
 function addMyPost(){
     let text = document.getElementById('notice').value;
     let title = document.getElementById('title').value;
@@ -20,11 +20,13 @@ function addMyPost(){
     }
 }
 
+//Saving Notes
 function save(){
     let postsAsText = JSON.stringify(posts);
     localStorage.setItem('posts', postsAsText);
 }
 
+//Display Notes
 function render(){
     let myposts = document.getElementById('myposts');
     myposts.innerHTML = '';
@@ -39,10 +41,10 @@ function render(){
             </div>
         </div>`;
     }
-
     document.getElementById('notice').value = '';
 }
 
+// Delete Notes
 function deleteNotice(i){
     posts.splice(i, 1);
 
