@@ -7,10 +7,13 @@ let titlesAsText = [];
 
 function addMyPost(){
     let text = document.getElementById('notice').value;
+    let title = document.getElementById('title').value;
 
-    if(text.trim() !== ''){
+    if(text.trim() !== '' && title.trim() !== ''){
         posts.push(text);
+        titles.push(title);
         document.getElementById('notice').value = '';
+        document.getElementById('title').value = '';
 
         save();
         render();
@@ -54,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let placeholderText = "Notiz schreiben";
     let currentText = "";
     let index = 0;
-    let dots = "";
+    let dots = "";  
 
     function updatePlaceholder() {
         if (index < placeholderText.length) {
