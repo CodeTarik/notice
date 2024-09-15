@@ -20,6 +20,19 @@ function addMyPost(){
     }
 }
 
+/*
+function addNote(){
+let noteInputRef = document.getElementById('notice');
+let noteInput = noteInputRef.value;
+
+posts.push(noteInput);
+render();
+
+noteInputRef.value = '';
+}
+
+*/
+
 //Saving Notes
 function save(){
     let postsAsText = JSON.stringify(posts);
@@ -27,14 +40,14 @@ function save(){
 }
 
 //Display Notes
-function render(){
+function render(){ 
     let myposts = document.getElementById('myposts');
     myposts.innerHTML = '';
 
     for(let i=0; i < posts.length; i++){
         myposts.innerHTML += /*html*/`
         <div class="post">
-            <b>${titles[i]}</b><br>
+            <b class="bold">${titles[i]}</b><br>
             <b>${posts[i]}</b>
             <div>
             <button class="d-button" onclick="deleteNotice(${i})">Löschen</button>
